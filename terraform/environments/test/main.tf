@@ -7,10 +7,10 @@ provider "azurerm" {
 }
 terraform {
   backend "azurerm" {
-    storage_account_name = ""
-    container_name       = ""
-    key                  = ""
-    access_key           = ""
+    storage_account_name = "tfstate275275859"
+    container_name       = "tfstate"
+    key                  = "test.terraform.tfstate"
+    access_key           = "R3cVR3LvQB7JRizLtdz9n7QrrNSqdthaU2UgqYouMRs9Wi8jc1f4IprobPCqmc0YqhcC+rYf02aj+ASt7QlvLg=="
   }
 }
 module "resource_group" {
@@ -51,4 +51,19 @@ module "publicip" {
   application_type = "${var.application_type}"
   resource_type    = "publicip"
   resource_group   = "${module.resource_group.resource_group_name}"
+}
+
+module "vm" {
+  source               = "../../modules/vm"
+  location             = "${var.location}"
+  resource_group       = "${module.resource_group.resource_group_name}"
+  application_type     = "${var.application_type}"
+  subnet_id            = "${module.network.subnet_id_test}"
+  vm_admin_username    = "adminuser"
+  public_ip_address_id = "${module.publicip.public_ip_address_id}"
+  packer_image         = "/subscriptions/0a18c62f-d3bc-43d1-8baf-18c6dbdb4e2a/resourceGroups/Azuredevops/providers/Microsoft.Compute/images/myPackerImage"
+  vm_size              =  "Standard_B1s"
+  resource_type        =  "webapp"
+
+  
 }
