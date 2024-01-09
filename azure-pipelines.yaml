@@ -8,7 +8,7 @@ trigger:
 
 # ToDo: Replace the agent pool name, if you are using Udacity Cloud lab. 
 # Otherwise, comment out the line below. 
-pool: myAP
+pool: MyAgentPool
 
 variables:
   python.version: '3.8.10'
@@ -19,11 +19,11 @@ variables:
   # Environment name
   environmentName: 'test-vm'
   # terraform storage number
-  tfstatenumber: 'tfstate3010624353'
+  tfstatenumber: 'tfstate783534'
   # terraform resource group
   tfrg: 'Azuredevops'
   # webapp name
-  application_type: 'elmer-qa'
+  application_type: 'my-application'
 
 stages:
 #--------------------------------------------#  
