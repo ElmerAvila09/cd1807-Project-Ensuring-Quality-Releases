@@ -5,14 +5,11 @@ resource "azurerm_resource_group" "Azuredevops" {
   location = "${var.location}"
   
   tags     = {
-    DeploymentId = "244467"
+    DeploymentId = "248856"
     LaunchId     = "1345"
     LaunchType   = "ON_DEMAND_LAB"
     TemplateId   = "1243"
     TenantId     = "203"
   }
 
-  lifecycle {
-    prevent_destroy = true
-  }
 }

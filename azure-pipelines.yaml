@@ -24,6 +24,7 @@ variables:
   tfrg: 'Azuredevops'
   # webapp name
   application_type: 'my-application'
+  subscriptionId: 'c9f1e8cb-24a3-405b-9046-bf2b34125d0c' # Add your Azure Subscription ID here
 
 stages:
 #--------------------------------------------#  
@@ -76,7 +77,16 @@ stages:
     #  displayName: 
     #  inputs:
     #   secureFile: 
-    
+    # Conditional Terraform Import
+    - task: Bash@3
+      displayName: 'Conditional Terraform Import'
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Check if the resource group already exists and is not in Terraform state
+          if [ $(az group exists --name $(tfrg)) = true ]; then
+            terraform import module.resource_group.azurerm_resource_group.Azuredevops /subscriptions/$(subscriptionId)/resourceGroups/$(tfrg)
+          fi
     # Run Terraform Apply
     - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV3@3
       displayName: Terraform apply
