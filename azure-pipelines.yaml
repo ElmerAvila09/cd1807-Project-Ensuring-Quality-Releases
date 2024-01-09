@@ -137,7 +137,7 @@ stages:
   # --------------------------------------------#  
   # Deploy FakeRestAPI Web App
   - deployment: DeployApi
-    pool: myAP    
+    pool: MyAgentPool    
     environment: $(environmentName)
     strategy:
       runOnce:
@@ -196,7 +196,7 @@ stages:
     # Jmeter - Performance Test Suite     
   - job: TestJMeter
     displayName: Test JMeter
-    pool: myAP
+    pool: MyAgentPool
     steps:
     - bash: |
         sudo apt-get install openjdk-11-jre-headless -y
