@@ -17,18 +17,19 @@ resource "azurerm_linux_virtual_machine" "test_vm" {
   size                = "Standard_DS2_v2"
   admin_username      = "adminuser"
   network_interface_ids = [azurerm_network_interface.test_nic.id]
+  source_image_id       = "/subscriptions/c9f1e8cb-24a3-405b-9046-bf2b34125d0c/resourceGroups/Azuredevops/providers/Microsoft.Compute/images/myPackerImage"
   admin_ssh_key {
     username   = "adminuser"
-    public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDH7djW1diX1uAJADMdvzvCXAi25vy+pOp0EUZa0+WNgYsPLNm0EjBdf5fIgoP70aOGglayLFDsdKYbdg/sxoYB3dZ9DCi5LI8YZXbTzrWOq+biHeQaZm1HzycLDuBVtFz7KEMwpM62WHwEAwsIewn7vnDcu8sqgRXMrHj5dQB/fHZMoc1i0wgZ2wMlY8GzT1kzE7CKe4fkPUR+oQBH+KjlMtOY8IJs6DpGN0fJN8RPHSyTdz7rDHXWHL4If+LmMQtva/fALbzGVqkTFkLOaSwxthp5EuBK5w+4zsfU7xF+tsH+fnnAMW9Ofl5gCSyqvZw/NBMos+DYguR6XdbBrIpApVcPQIslTGi0raDq3S2x+KcfPlbeWovLrajQSYqBzVzcCpjQXYJX7GVO95jAX/Qfk5eS9ihiXom4h1kRjSvIriIjr/7JCayTcZ+gjPGXXxUSeNl6rI1vRmIkGBdKkHmFXRPn6Vo2FNqzmk39k1H/iafoy70TriCedrkKvG1He5s= odl_user@SandboxHost-638366887482295031"
+    public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLuBfgsSSGu9rZduyilIgD4atN680tinbFouqcVvFAT/Wdbw17LI/uVx8OX0rZvTKbNzRm4qxgQ2IqTRvX0MLgucnBV7lEDVfL/V20izrkI9+WfHOGB6E7ZrlCm2Wy93xS/hLdxN2/P2khUo9nZQ6yBXmsDfV9o3UR+eFIvsym6St/qRUh2mMzONggu5PL9U8N3Bf4M/nknicOUZI7me29yVoL4E0Xyzju1t3IzZZE0JRUz0R5QzbRPopto3cZUZW7ZCyMzu6ymTAZKrPUQq92oBLq+5dtboPuXLPBguuFWX1aOIDOF9EXxb7yISJzRVnmwOITCwEwuCNThG/nuogPzU4HKjxHc52y+RZeilORb+PfZkVPnyUOEqpnWRplzLQ5Fg08jNuvYsbz0rWaw03U6ztRKY2dgGQuJh7bL1ovUurJyqBorFRDGVvppe5HWsjw8mkSL0r6Yi+iPody8Ly193Zex94+KAYJhiveCjuWQEbbK6eF02/jYG8YuXwayxU= odl_user@SandboxHost-638404187256337228"
   }
   os_disk {
     caching           = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
-  source_image_reference {
+/*   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
     sku       = "18.04-LTS"
     version   = "latest"
-  }
+  } */
 }
