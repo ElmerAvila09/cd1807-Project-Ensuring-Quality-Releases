@@ -82,6 +82,7 @@ stages:
     - task: Bash@3
       displayName: 'Conditional Terraform Import'
       inputs:
+        workingDirectory: '$(projectRoot)/terraform/environments/test'
         targetType: 'inline'
         script: |
           # Check if the resource group already exists and is not in Terraform state
