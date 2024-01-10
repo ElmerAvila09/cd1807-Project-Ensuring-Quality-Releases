@@ -20,7 +20,7 @@ resource "azurerm_linux_virtual_machine" "test_vm" {
   source_image_id       = "/subscriptions/c9f1e8cb-24a3-405b-9046-bf2b34125d0c/resourceGroups/Azuredevops/providers/Microsoft.Compute/images/myPackerImage"
   admin_ssh_key {
     username   = "adminuser"
-    public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLuBfgsSSGu9rZduyilIgD4atN680tinbFouqcVvFAT/Wdbw17LI/uVx8OX0rZvTKbNzRm4qxgQ2IqTRvX0MLgucnBV7lEDVfL/V20izrkI9+WfHOGB6E7ZrlCm2Wy93xS/hLdxN2/P2khUo9nZQ6yBXmsDfV9o3UR+eFIvsym6St/qRUh2mMzONggu5PL9U8N3Bf4M/nknicOUZI7me29yVoL4E0Xyzju1t3IzZZE0JRUz0R5QzbRPopto3cZUZW7ZCyMzu6ymTAZKrPUQq92oBLq+5dtboPuXLPBguuFWX1aOIDOF9EXxb7yISJzRVnmwOITCwEwuCNThG/nuogPzU4HKjxHc52y+RZeilORb+PfZkVPnyUOEqpnWRplzLQ5Fg08jNuvYsbz0rWaw03U6ztRKY2dgGQuJh7bL1ovUurJyqBorFRDGVvppe5HWsjw8mkSL0r6Yi+iPody8Ly193Zex94+KAYJhiveCjuWQEbbK6eF02/jYG8YuXwayxU= odl_user@SandboxHost-638404187256337228"
+    public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDtldszwtjfEMgZaq7x3ACyWgLVptG9V7W+VbGQcfPZz3RnUvq6uEIoNcvRjbFADqlnL5rbVDPlGKsLy8C6Ts/qSw7zz7YcLuoaDfbdL7zvv/aWZ5OfSoPUn8R89Uu/rez2p/R+NiQ+zZHOGQnwqzmg65lRchL7Okx9ar7LCTyKVn5jyAMsxuNcAy6aLP1fwXpbucn+lHy53iix6gS/UyckESwaUIZACwE/TFc7+RbmrnITd1f7nczQBwXU9S3CvwBUBFgP6c/NUIj1vZV1bV9VrWSvOiYG1c/ZQXmOY7nJuCtzoULNQK/n1BRQ8n4mljbm4w8YMYxl21U0tvh59R3vH+NPmnb5SAB4UKbndtGPcyusBAT1wcQpE+izE8wM8LIFx4J1iIoMqIpRdlZW79ZAs8jmWeUhO2u4kr59Bez+rEX6PSUhjtda3WpOD7iSG7K+f0/MWA6ECipDi7yW/9RXPrDPwbYp7YCmqMUHaDCYENrR1RJI1dmH564otD0rZX0= odl_user@SandboxHost-638405027241533819"
   }
   os_disk {
     caching           = "ReadWrite"
