@@ -85,9 +85,7 @@ stages:
         targetType: 'inline'
         script: |
           # Check if the resource group already exists and is not in Terraform state
-          if [ $(az group exists --name $(tfrg)) = true ]; then
-            terraform import module.resource_group.azurerm_resource_group.Azuredevops /subscriptions/$(subscriptionId)/resourceGroups/$(tfrg)
-          fi
+          terraform import module.resource_group.azurerm_resource_group.Azuredevops /subscriptions/$(subscriptionId)/resourceGroups/$(tfrg)
     # Run Terraform Apply
     - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV3@3
       displayName: Terraform apply
